@@ -1,5 +1,5 @@
 android_app {
-    name: "AxPrivacy",
+    name: "PrivacySettings",
 
     // SettingsLib and its dependencies (CollapsingToolbarBaseActivity, SettingsBasePreferenceFragment)
     defaults: ["SettingsLibDefaults"],

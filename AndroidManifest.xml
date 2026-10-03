@@ -23,7 +23,7 @@
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true"
-        android:theme="@style/Theme.AxPrivacy">
+        android:theme="@style/Theme.PrivacySettings">
 
         <activity
             android:name=".PrivacyActivity"
