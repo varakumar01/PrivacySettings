@@ -1,0 +1,23 @@
+android_app {
+    name: "AxPrivacy",
+
+    // SettingsLib and its dependencies (CollapsingToolbarBaseActivity, SettingsBasePreferenceFragment)
+    defaults: ["SettingsLibDefaults"],
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+
+    platform_apis: true,
+    certificate: "platform",
+    system_ext_specific: true,
+    privileged: true,
+    privapp_allowlist: "org.aox.privacy.xml",
+
+    static_libs: [
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "org.lineageos.platform.internal",
+        "SettingsLibPreference",
+    ],
+}
