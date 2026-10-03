@@ -7,6 +7,18 @@
     <string name="scramble_pin_summary">Shuffle the digit positions every time the PIN pad is shown</string>
     <string name="auto_reboot_title">Auto reboot when locked</string>
     <string name="duress_title">Duress PIN</string>
+    <string name="duress_summary_set">Set</string>
+    <string name="duress_summary_unset">Not set</string>
+    <string name="duress_message">Entering this PIN or password on the lock screen erases all data on the device immediately. It is cleared when the screen lock changes.</string>
+    <string name="duress_current">Current screen lock</string>
+    <string name="duress_new">Duress PIN or password</string>
+    <string name="duress_again">Repeat duress PIN or password</string>
+    <string name="duress_save">Save</string>
+    <string name="duress_remove">Remove</string>
+    <string name="duress_mismatch">Entries differ or are shorter than 4 characters</string>
+    <string name="duress_same">The duress entry must differ from your screen lock</string>
+    <string name="duress_wrong">Current screen lock is wrong</string>
+    <string name="duress_needs_pin">Duress PIN needs a PIN or password screen lock</string>
 
     <string name="cat_network">Network</string>
     <string name="tether_vpn_title">VPN tethering</string>

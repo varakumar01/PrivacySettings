@@ -15,6 +15,9 @@
             android:entries="@array/reboot_entries"
             android:entryValues="@array/reboot_values"
             android:defaultValue="0" />
+        <Preference
+            android:key="duress"
+            android:title="@string/duress_title" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/cat_network">
