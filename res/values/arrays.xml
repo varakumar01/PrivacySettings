@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- values are minutes; 0 = off -->
+    <string-array name="reboot_entries">
+        <item>@string/off</item>
+        <item>@string/hour_1</item>
+        <item>@string/hour_4</item>
+        <item>@string/hour_8</item>
+        <item>@string/hour_12</item>
+        <item>@string/hour_18</item>
+        <item>@string/hour_24</item>
+        <item>@string/hour_72</item>
+    </string-array>
+    <string-array name="reboot_values">
+        <item>0</item>
+        <item>60</item>
+        <item>240</item>
+        <item>480</item>
+        <item>720</item>
+        <item>1080</item>
+        <item>1440</item>
+        <item>4320</item>
+    </string-array>
+    <string-array name="radio_entries">
+        <item>@string/off</item>
+        <item>@string/min_5</item>
+        <item>@string/min_15</item>
+        <item>@string/min_30</item>
+        <item>@string/hour_1</item>
+    </string-array>
+    <string-array name="radio_values">
+        <item>0</item>
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+</resources>

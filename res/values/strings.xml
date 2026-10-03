@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Advanced protection</string>
+
+    <string name="cat_lock">Lock screen</string>
+    <string name="scramble_pin_title">Scramble PIN layout</string>
+    <string name="scramble_pin_summary">Shuffle the digit positions every time the PIN pad is shown</string>
+    <string name="auto_reboot_title">Auto reboot when locked</string>
+    <string name="duress_title">Duress PIN</string>
+
+    <string name="cat_network">Network</string>
+    <string name="tether_vpn_title">VPN tethering</string>
+    <string name="tether_vpn_summary">Let hotspot and tethered clients use this device\'s VPN connection</string>
+
+    <string name="cat_radios">Radios</string>
+    <string name="wifi_timeout_title">Turn off Wi-Fi when not connected</string>
+    <string name="bt_timeout_title">Turn off Bluetooth when idle</string>
+
+    <string name="off">Off</string>
+    <string name="min_5">5 minutes</string>
+    <string name="min_15">15 minutes</string>
+    <string name="min_30">30 minutes</string>
+    <string name="hour_1">1 hour</string>
+    <string name="hour_4">4 hours</string>
+    <string name="hour_8">8 hours</string>
+    <string name="hour_12">12 hours</string>
+    <string name="hour_18">18 hours</string>
+    <string name="hour_24">24 hours</string>
+    <string name="hour_72">72 hours</string>
+</resources>
