@@ -10,6 +10,13 @@
             android:entries="@array/reboot_entries"
             android:entryValues="@array/reboot_values"
             android:defaultValue="0" />
+        <ListPreference
+            android:key="usb_restrict"
+            android:persistent="false"
+            android:title="@string/usb_restrict_title"
+            android:summary="%s"
+            android:entries="@array/usb_entries"
+            android:entryValues="@array/usb_values" />
         <Preference
             android:key="duress"
             android:title="@string/duress_title" />

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 
 import com.android.settingslib.widget.SettingsBasePreferenceFragment;
@@ -18,12 +19,24 @@ import com.android.internal.widget.LockscreenCredential;
 
 import java.util.concurrent.Executors;
 
+import lineageos.providers.LineageSettings;
+
 public class PrivacyFragment extends SettingsBasePreferenceFragment {
+    private ListPreference mUsb;
     private Preference mDuress;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.privacy, rootKey);
+
+        // Mirrors a setting owned by UsbDeviceManager, so it is read back from the
+        // provider on every resume instead of persisted here.
+        mUsb = findPreference("usb_restrict");
+        mUsb.setOnPreferenceChangeListener((p, v) -> {
+            LineageSettings.Global.putInt(requireContext().getContentResolver(),
+                    LineageSettings.Global.TRUST_RESTRICT_USB, Integer.parseInt((String) v));
+            return true;
+        });
 
         mDuress = findPreference("duress");
         mDuress.setOnPreferenceClickListener(p -> {
@@ -136,6 +149,9 @@ public class PrivacyFragment extends SettingsBasePreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
+        mUsb.setValue(String.valueOf(LineageSettings.Global.getInt(
+                requireContext().getContentResolver(),
+                LineageSettings.Global.TRUST_RESTRICT_USB, 0)));
         updateDuressSummary();
     }
 }

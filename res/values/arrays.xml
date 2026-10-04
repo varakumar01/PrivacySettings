@@ -21,6 +21,17 @@
         <item>1440</item>
         <item>4320</item>
     </string-array>
+    <!-- LineageSettings.Global.TRUST_RESTRICT_USB: 0 off, 1 when locked, 2 always -->
+    <string-array name="usb_entries">
+        <item>@string/off</item>
+        <item>@string/usb_when_locked</item>
+        <item>@string/usb_always</item>
+    </string-array>
+    <string-array name="usb_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
     <string-array name="radio_entries">
         <item>@string/off</item>
         <item>@string/min_5</item>

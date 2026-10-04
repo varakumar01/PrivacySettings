@@ -3,6 +3,9 @@
     <string name="app_name">Advanced protection</string>
 
     <string name="cat_lock">Lock screen</string>
+    <string name="usb_restrict_title">USB data protection</string>
+    <string name="usb_when_locked">Charge only when locked</string>
+    <string name="usb_always">Charge only, always</string>
     <string name="auto_reboot_title">Auto reboot when locked</string>
     <string name="duress_title">Duress PIN</string>
     <string name="duress_summary_set">Set</string>
