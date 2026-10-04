@@ -17,6 +17,8 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
 import android.net.wifi.WifiManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.os.SystemClock;
 
@@ -76,7 +78,7 @@ final class Controller extends BroadcastReceiver {
                 new ConnectivityManager.NetworkCallback() {
                     @Override public void onAvailable(Network n) { mWifiNets.add(n); evalWifi(); }
                     @Override public void onLost(Network n) { mWifiNets.remove(n); evalWifi(); }
-                });
+                }, new Handler(Looper.getMainLooper()));
         mPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
         evalWifi();
         evalBt();
