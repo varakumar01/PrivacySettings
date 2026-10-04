@@ -3,7 +3,6 @@
     package="org.aox.privacy"
     android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
     <!-- Duress PIN: lock settings DB + credential check -->
     <uses-permission android:name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE" />
     <!-- Auto reboot -->

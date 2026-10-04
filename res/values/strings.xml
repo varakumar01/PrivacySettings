@@ -3,8 +3,6 @@
     <string name="app_name">Advanced protection</string>
 
     <string name="cat_lock">Lock screen</string>
-    <string name="scramble_pin_title">Scramble PIN layout</string>
-    <string name="scramble_pin_summary">Shuffle the digit positions every time the PIN pad is shown</string>
     <string name="auto_reboot_title">Auto reboot when locked</string>
     <string name="duress_title">Duress PIN</string>
     <string name="duress_summary_set">Set</string>
@@ -19,10 +17,6 @@
     <string name="duress_same">The duress entry must differ from your screen lock</string>
     <string name="duress_wrong">Current screen lock is wrong</string>
     <string name="duress_needs_pin">Duress PIN needs a PIN or password screen lock</string>
-
-    <string name="cat_network">Network</string>
-    <string name="tether_vpn_title">VPN tethering</string>
-    <string name="tether_vpn_summary">Let hotspot and tethered clients use this device\'s VPN connection</string>
 
     <string name="cat_radios">Radios</string>
     <string name="wifi_timeout_title">Turn off Wi-Fi when not connected</string>

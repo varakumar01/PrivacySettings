@@ -4,15 +4,12 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.UserHandle;
-import android.provider.Settings;
 import android.text.InputType;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.preference.Preference;
-
-import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
@@ -21,32 +18,12 @@ import com.android.internal.widget.LockscreenCredential;
 
 import java.util.concurrent.Executors;
 
-import lineageos.providers.LineageSettings;
-
 public class PrivacyFragment extends SettingsBasePreferenceFragment {
-    private SwitchPreferenceCompat mScramble;
-    private SwitchPreferenceCompat mTetherVpn;
     private Preference mDuress;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.privacy, rootKey);
-
-        // These two mirror system settings owned by other components, so they are
-        // read back from the provider on every resume instead of persisted here.
-        mScramble = findPreference("scramble_pin");
-        mScramble.setOnPreferenceChangeListener((p, v) -> {
-            LineageSettings.System.putInt(requireContext().getContentResolver(),
-                    LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, (Boolean) v ? 1 : 0);
-            return true;
-        });
-
-        mTetherVpn = findPreference("tether_vpn");
-        mTetherVpn.setOnPreferenceChangeListener((p, v) -> {
-            Settings.Secure.putInt(requireContext().getContentResolver(),
-                    Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS, (Boolean) v ? 1 : 0);
-            return true;
-        });
 
         mDuress = findPreference("duress");
         mDuress.setOnPreferenceClickListener(p -> {
@@ -159,11 +136,6 @@ public class PrivacyFragment extends SettingsBasePreferenceFragment {
     @Override
     public void onResume() {
         super.onResume();
-        final var cr = requireContext().getContentResolver();
-        mScramble.setChecked(LineageSettings.System.getInt(cr,
-                LineageSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0) != 0);
-        mTetherVpn.setChecked(Settings.Secure.getInt(cr,
-                Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS, 0) != 0);
         updateDuressSummary();
     }
 }

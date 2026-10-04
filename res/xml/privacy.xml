@@ -3,11 +3,6 @@
     android:title="@string/app_name">
 
     <PreferenceCategory android:title="@string/cat_lock">
-        <SwitchPreferenceCompat
-            android:key="scramble_pin"
-            android:persistent="false"
-            android:title="@string/scramble_pin_title"
-            android:summary="@string/scramble_pin_summary" />
         <ListPreference
             android:key="auto_reboot"
             android:title="@string/auto_reboot_title"
@@ -18,14 +13,6 @@
         <Preference
             android:key="duress"
             android:title="@string/duress_title" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/cat_network">
-        <SwitchPreferenceCompat
-            android:key="tether_vpn"
-            android:persistent="false"
-            android:title="@string/tether_vpn_title"
-            android:summary="@string/tether_vpn_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/cat_radios">
