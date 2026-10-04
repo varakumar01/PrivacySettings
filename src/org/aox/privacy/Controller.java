@@ -57,6 +57,12 @@ final class Controller extends BroadcastReceiver {
     private final SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
             (sp, key) -> onPrefChanged(key);
 
+    // Separate instance: one receiver cannot be registered for both the current user
+    // and all users.
+    private final BroadcastReceiver mPkgReceiver = new BroadcastReceiver() {
+        @Override public void onReceive(Context c, Intent i) { blockNewApp(i); }
+    };
+
     private boolean mRebootArmed;
     private boolean mWifiArmed;
     private boolean mBtArmed;
@@ -82,7 +88,8 @@ final class Controller extends BroadcastReceiver {
 
         final IntentFilter pkg = new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
         pkg.addDataScheme("package");
-        mCtx.registerReceiverForAllUsers(this, pkg, null, null, Context.RECEIVER_NOT_EXPORTED);
+        mCtx.registerReceiverForAllUsers(mPkgReceiver, pkg, null, null,
+                Context.RECEIVER_NOT_EXPORTED);
 
         mCtx.getSystemService(ConnectivityManager.class).registerNetworkCallback(
                 new NetworkRequest.Builder()
@@ -118,7 +125,6 @@ final class Controller extends BroadcastReceiver {
                 }
                 evalBt();
             }
-            case Intent.ACTION_PACKAGE_ADDED -> blockNewApp(i);
             case ACT_REBOOT -> {
                 mRebootArmed = false;
                 if (minutes("auto_reboot") > 0
